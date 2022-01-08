@@ -29,7 +29,8 @@ export const PlaceProvider = ( { children } : Props ) => {
 
     useEffect(() => {
         getUserLocation()
-        .then( lngLat => dispatch( { type: 'setUserLocation' , payload : lngLat  } ) );
+        .then( lngLat => dispatch( { type: 'setUserLocation' , payload : lngLat  } ) )
+        .catch( lngLat => dispatch( { type: 'setUserLocation' , payload : lngLat  } ) );
     }, []);
 
     const searchPlacesByTerm = async( q : string): Promise<Feature[]> => {

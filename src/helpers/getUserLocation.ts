@@ -8,8 +8,7 @@ export const getUserLocation = async (): Promise<[ number, number ]> => {
 
             ( err ) => {
                 alert('No se puedo obtener la geolocalización');
-                console.log(err);
-                reject();
+                reject([ -71.2063181 , 46.8120929 ]);
             }
         );
     });
